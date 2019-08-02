@@ -1,5 +1,5 @@
 % data=importdata('Bunny_head.obj');
-% sprintf('ç‚¹çš„ä¸ªæ•°ä¸º%d,é¢çš„ä¸ªæ•°ä¸º%d',data.data(1,1),data.data(2,1))
+% sprintf('µãµÄ¸öÊıÎª%d,ÃæµÄ¸öÊıÎª%d',data.data(1,1),data.data(2,1))
 % vertex=zeros(data.data(1,1),3);
 % face=zeros(data.data(2,1),3);
 % vertex_no=1;
