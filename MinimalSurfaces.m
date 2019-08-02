@@ -1,6 +1,6 @@
 
 %读取obj。兼容性不好，如果读取的不是类似‘Bunny_head.obj’结构的obj文件可能读不出来。
-data=importdata('Bunny_head.obj');
+data=importdata('big_Bunny_head.obj');
 sprintf('点的个数为%d,面的个数为%d',data.data(1,1),data.data(2,1))
 vertex=zeros(data.data(1,1),3);
 face=zeros(data.data(2,1),3);
@@ -153,7 +153,7 @@ new_position=A\b;
 t2=clock;
 
 %将结果输入new_Bunny_head.obj
-fid=fopen(['new_Bunny_head.obj'],'w');
+fid=fopen(['new_Bunny_head(原版).obj'],'w');
 x=1;
 for i=1:size(vertex,1)
     if point_label(i,1)==1
