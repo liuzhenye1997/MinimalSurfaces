@@ -1,15 +1,17 @@
 %先算角度，再利用cot函数
 function angle_cot=Calculate_angle_cot(vertex,face)
 length=zeros(size(face,1),3);
-for i=1:3
-    length(:,i)=sum((vertex(face(:,mod(i,3)+1),:)-vertex(face(:,mod(i+1,3)+1),:)).^2,2);
-end
+
+i=1:3;
+length(:)=sum((vertex(face(:,mod(i,3)+1),:)-vertex(face(:,mod(i+1,3)+1),:)).^2,2);
+
 angle=zeros(size(face,1),3);
-for i=1:3
-    angle(:,i)=acos((length(:,mod(i,3)+1)+length(:,mod(i+1,3)+1)-length(:,i))./sqrt(length(:,mod(i+1,3)+1).*length(:,mod(i,3)+1))/2);    
-end
+i=1:3;
+angle(:,i)=acos((length(:,mod(i,3)+1)+length(:,mod(i+1,3)+1)-length(:,i))./sqrt(length(:,mod(i+1,3)+1).*length(:,mod(i,3)+1))/2);    
+
 angle_cot=cot(angle);
 end
+
 
 %利用cot=cos/sin
 % function angle_cot=Calculate_angle_cot(vertex,face)
